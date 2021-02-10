@@ -59,14 +59,14 @@ static HAL_StatusTypeDef I2C_RequestMemoryRead2(I2C_HandleTypeDef *hi2c, uint16_
       return HAL_ERROR;
     }
 
-    hi2c->Instance->DR = ((uint8_t)((uint32_t)(((uint32_t)((MemAddress) & (uint32_t)(0x0000FF00U))) >> 8U)));
+    hi2c->Instance->TXDR = ((uint8_t)((uint32_t)(((uint32_t)((MemAddress) & (uint32_t)(0x0000FF00U))) >> 8U)));
 
     if (I2C_WaitOnTXISFlagUntilTimeout(hi2c, Timeout, Tickstart) != HAL_OK)
     {
       return HAL_ERROR;
     }
 
-    hi2c->Instance->DR = ((uint8_t)((uint32_t)(((uint32_t)((MemAddress) & (uint32_t)(0x000000FFU))))));
+    hi2c->Instance->TXDR = ((uint8_t)((uint32_t)(((uint32_t)((MemAddress) & (uint32_t)(0x000000FFU))))));
 
   }
 
