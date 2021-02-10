@@ -20,8 +20,12 @@
 
 - ***IMPORTANT***
   
-The firmware used in the project was based on the HAL library. I was not able to use the existing functions because apparently the HAL I2C sending functions do not support 4-byte messages. I had to add 2 functions (in [stm32h7xx_hal_i2c.c](https://github.com/brenogsantos/MLX90621_H743/blob/main/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c)) and add a 32-bit memory space identifier (in [stm32h7xx_hal_i2c.h](https://github.com/brenogsantos/MLX90621_H743/blob/main/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)).
+The firmware used in the project was based on the HAL library. I was not able to use the existing functions because apparently the HAL I2C sending functions do not support 4-byte messages. I had to add 2 functions (in [stm32h7xx_hal_i2c.c](https://github.com/brenogsantos/MLX90621_H743/blob/main/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c)) and add a 32-bit memory space identifier (in [stm32h7xx_hal_i2c.h](https://github.com/brenogsantos/MLX90621_H743/blob/main/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)). 
+
+Function and identifier --> [.txt](https://github.com/brenogsantos/MLX90621_H743/blob/main/Docs/HAL_i2c_h7.txt)
+
 So every time you generate the STM code you need to add the following:
+
 ```
 #define I2C_MEMADD_SIZE_32BIT			(0x00000004U)
 
