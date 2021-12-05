@@ -10,7 +10,7 @@
 - [NUCLEO-H743ZI2 Pinout](https://os.mbed.com/platforms/ST-Nucleo-H743ZI/)
 
 
-# Conteúdo
+# Content
 - [I2C](#i2c)
 - [Code](#code)
 - [Issues](#issues)
